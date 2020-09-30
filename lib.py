@@ -103,9 +103,17 @@ def reflexao_linhas(img: Image) -> Image:
 
 def ajuste_brilho(img: Image, gama: float) -> Image:
     """
-    Ajuste de brilho com fator gama.
+    Ajusta o brilho da imagem com fator gama.
     """
     A = transformacao_linear(img, (0, 1), (0, 255))
     B = A ** (1 / gama)
     ajustado = transformacao_linear(B, (0, 255), (0, 1))
     return trunca(ajustado)
+
+
+def plano_de_bit(img: Image, bit: int) -> Image:
+    """
+    Extrai o plano para um dado ``bit``.
+    """
+    bitpat = (img >> bit) & 1
+    return bitpat * 255
