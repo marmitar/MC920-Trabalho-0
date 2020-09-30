@@ -3,6 +3,9 @@ from typing import Protocol, Type, Union, Literal, Optional, overload, Tuple
 
 
 class Image(Protocol, ndarray): # type: ignore
+    """
+    Matriz que representam imagens em OpenCV e biblioteca similares.
+    """
     dtype: Type[dtype] = uint8
     ndim: Union[Literal[2], Literal[3]]
     shape: Union[Tuple[int, int], Tuple[int, int, int]]
