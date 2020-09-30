@@ -13,6 +13,9 @@ class Image(Protocol, ndarray): # type: ignore
     ndim: Literal[3] = 3
     shape: Tuple[int, int, Literal[3]]
 
+    def copy(self) -> "Image":
+        ...
+
     @overload
     def __add__(self, other: Union[Image, int]) -> Image: ...
     @overload
