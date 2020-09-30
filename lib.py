@@ -96,8 +96,10 @@ def reflexao_linhas(img: Image) -> Image:
     Reflete verticalmente as linhas superiores.
     """
     mid = img.shape[0] // 2
+    assert mid > 0
+
     copy = img.copy()
-    copy[-mid:] = copy[:mid:-1]
+    copy[-mid:] = copy[:mid][::-1]
     return copy
 
 
