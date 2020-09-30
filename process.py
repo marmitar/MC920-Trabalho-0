@@ -1,7 +1,30 @@
 from argparse import ArgumentParser, FileType
-from typing import List
+from typing import List, Dict, Tuple, Callable, Any
+import cv2
 from inout import leitura, escrita, mostrar, ordem_mosaico
 from tipos import Image
+from lib import (
+    grayscale, negativo, espelhamento_vertical, converter_intervalo,
+    inverte_linhas_pares, reflexao_linhas, ajuste_brilho,
+    plano_de_bit, combinacao, mosaico
+)
+
+
+Transform = Callable[..., Image]
+Arguments = List[Callable[[str], Any]]
+
+operation: Dict[str, Tuple[Transform, Arguments]] = {
+    'monocromatico':    (grayscale,             []),
+    'negativo':         (negativo,              []),
+    'esp.vertical':     (espelhamento_vertical, []),
+    'conv.intervalo':   (converter_intervalo,   []),
+    'inverte.pares':    (inverte_linhas_pares,  []),
+    'reflexao':         (reflexao_linhas,       []),
+    'aj.brilho':        (ajuste_brilho,         [float]),
+    'plano.bit':        (plano_de_bit,          [int]),
+    'combina':          (combinacao,            [cv2.imread, float]),
+    'mosaico':          (mosaico,               [ordem_mosaico])
+}
 
 
 def aplica_ops(img: Image, ops: List[str]) -> Image:
