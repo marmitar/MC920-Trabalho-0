@@ -29,6 +29,17 @@ operation: Dict[str, Tuple[Transform, Arguments]] = {
 
 def aplica_ops(img: Image, ops: List[str]) -> Image:
     """Aplica a sequência de operações na imagem."""
+
+    op = iter(ops)
+
+    for code in op:
+        # decide a operação
+        func, argp = operation[code]
+        # le e parseia os argumentos necessarios
+        args = [argty(next(op)) for argty in argp]
+        # aplica a operação com os argumentos
+        img = func(img, *args)
+
     return img
 
 
