@@ -1,5 +1,10 @@
 """
 Operações de processamento de imagens.
+
+Nota
+----
+Todas as operações aqui fazem cópia da imagem para evitar
+alterar inesperadamente o buffer interno dos vetores.
 """
 import numpy as np
 from typing import Optional, Tuple
@@ -66,4 +71,31 @@ def espelhamento_vertical(img: Image) -> Image:
     Espelha a imagem pelas linhas.
     """
     mirror: Image = img[::-1]
-    return mirror
+    return mirror.copy()
+
+
+def converter_intervalo(img: Image, zmin: int=100, zmax: int=200) -> Image:
+    """
+    Muda o intervalo de intensidades de ``[0, 255]`` para ``[zmin, zmax]``.
+    """
+    trf = transformacao_linear(img, (zmin, zmax))
+    return trunca(trf)
+
+
+def inverte_linhas_pares(img: Image) -> Image:
+    """
+    Espelha as linhas pares horizontalmente.
+    """
+    copy = img.copy()
+    copy[::2] = copy[::2,::-1]
+    return copy
+
+
+def reflexao_linhas(img: Image) -> Image:
+    """
+    Reflete verticalmente as linhas superiores.
+    """
+    mid = img.shape[0] // 2
+    copy = img.copy()
+    copy[-mid:] = copy[:mid:-1]
+    return copy
