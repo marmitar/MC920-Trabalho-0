@@ -117,3 +117,12 @@ def plano_de_bit(img: Image, bit: int) -> Image:
     """
     bitpat = (img >> bit) & 1
     return bitpat * 255
+
+
+def combinacao(A: Image, B: Image, razao: float=0.5) -> Image:
+    """
+    Combina duas imagens com uma razão ``razao``
+    para a imagem ``A``.
+    """
+    img = A * razao + B * (1 - razao)
+    return trunca(img)
