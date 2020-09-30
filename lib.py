@@ -7,7 +7,7 @@ Todas as operações aqui fazem cópia da imagem para evitar
 alterar inesperadamente o buffer interno dos vetores.
 """
 import numpy as np
-from typing import Optional, Tuple
+from typing import Optional, Tuple, List
 from tipos import Image
 
 
@@ -126,3 +126,39 @@ def combinacao(A: Image, B: Image, razao: float=0.5) -> Image:
     """
     img = A * razao + B * (1 - razao)
     return trunca(img)
+
+
+def _separa_blocos(matrix: np.ndarray, nlins: int, ncols: int) -> List[np.ndarray]:
+    """
+    Separa a matriz em ``nlins * ncols`` submatrizes de mesmas
+    dimensões e as retorna em uma lista.
+    """
+    return [
+        bloco
+        for linha in np.vsplit(matrix, nlins)
+        for bloco in np.hsplit(linha, ncols)
+    ]
+
+
+def _concat_blocos(blocks: List[List[np.ndarray]]) -> np.ndarray:
+    """
+    Concatena vários blocos de mesma dimensão em uma matriz.
+    """
+    return np.concatenate([
+        np.concatenate(row, axis=1)
+        for row in blocks
+    ])
+
+
+def mosaico(img: Image, ordem: np.ndarray) -> Image:
+    """
+    Transformação de mosaico.
+
+    A matriz ``ordem`` com a nova ordem dos blocos deve
+    ter exatamente duas dimensões ``(N, M)`` e todos os
+    seus elementos devem ser inteiros em ``[0, N*M)``.
+    """
+    bloco = _separa_blocos(img, *ordem.shape)
+    ordblocos = [[bloco[i] for i in lin] for lin in ordem]
+    mosaico: Image = _concat_blocos(ordblocos)
+    return mosaico
