@@ -5,5 +5,6 @@ __pycache__
 *.aux*
 *.fdb*
 *.log*
+*.out*
 *.synctex*
 relatorio/*.pdf
