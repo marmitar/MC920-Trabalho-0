@@ -5,6 +5,7 @@ import numpy as np
 from typing import Optional, Tuple
 from tipos import Image
 
+
 # # # # # # # # # # # # #
 # Operações auxiliares  #
 
@@ -39,3 +40,30 @@ def trunca(array: np.ndarray) -> Image:
 
     assert img.ndim == 3
     return img
+
+
+# # # # # # # # # # # # #
+# Operações com imagens #
+
+def grayscale(img: Image) -> Image:
+    """
+    Muda a imagem para tons de cinza.
+    """
+    gray = np.mean(img, axis=2)
+    canais = np.stack([gray, gray, gray], axis=2)
+    return trunca(canais)
+
+
+def negativo(img: Image) -> Image:
+    """
+    Faz o negativo da imagem.
+    """
+    return ~img
+
+
+def espelhamento_vertical(img: Image) -> Image:
+    """
+    Espelha a imagem pelas linhas.
+    """
+    mirror: Image = img[::-1]
+    return mirror
