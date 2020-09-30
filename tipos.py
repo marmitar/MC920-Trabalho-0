@@ -1,3 +1,6 @@
+"""
+Procolos para tipagem estática com ``mypy``.
+"""
 from numpy import ndarray, uint8, dtype
 from typing import Protocol, Type, Union, Literal, Optional, overload, Tuple
 
