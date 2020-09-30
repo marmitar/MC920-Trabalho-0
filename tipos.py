@@ -1,11 +1,12 @@
 """
 Procolos para tipagem estática com ``mypy``.
 """
+from __future__ import annotations
 from numpy import ndarray, uint8, dtype
 from typing import Protocol, Type, Union, Literal, Optional, overload, Tuple
 
 
-class Image(Protocol, ndarray): # type: ignore
+class Image(ndarray): # type: ignore
     """
     Matriz que representam imagens em OpenCV e biblioteca similares.
     """
@@ -13,7 +14,7 @@ class Image(Protocol, ndarray): # type: ignore
     ndim: Literal[3] = 3
     shape: Tuple[int, int, Literal[3]]
 
-    def copy(self) -> "Image":
+    def copy(self) -> Image:
         ...
 
     @overload
