@@ -1,3 +1,9 @@
 .vscode
 .mypy*
 __pycache__
+*.fls*
+*.aux*
+*.fdb*
+*.log*
+*.synctex*
+relatorio/*.pdf
