@@ -63,7 +63,7 @@
 \fancyhf{}
 \fancyhead[L]{\sffamily Universidade Estadual de Campinas}
 \fancyhead[R]{\sffamily MC920 Processamento de Imagem Digital, 2020 2S}
-\fancyfoot[L]{\sffamily Instituto de Computação}
+\fancyfoot[L]{\sffamily IC Instituto de Computação}
 \fancyfoot[R]{\sffamily\bfseries\thepage}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
