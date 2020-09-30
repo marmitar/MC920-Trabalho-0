@@ -37,5 +37,5 @@ def trunca(array: np.ndarray) -> Image:
     img[array <= 0] = 0
     img[array >= 255] = 255
 
-    assert 2 <= img.ndim <= 3
+    assert img.ndim == 3
     return img
