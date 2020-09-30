@@ -99,3 +99,13 @@ def reflexao_linhas(img: Image) -> Image:
     copy = img.copy()
     copy[-mid:] = copy[:mid:-1]
     return copy
+
+
+def ajuste_brilho(img: Image, gama: float) -> Image:
+    """
+    Ajuste de brilho com fator gama.
+    """
+    A = transformacao_linear(img, (0, 1), (0, 255))
+    B = A ** (1 / gama)
+    ajustado = transformacao_linear(B, (0, 255), (0, 1))
+    return trunca(ajustado)
