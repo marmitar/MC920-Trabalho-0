@@ -78,7 +78,7 @@ def converter_intervalo(img: Image, zmin: int=100, zmax: int=200) -> Image:
     """
     Muda o intervalo de intensidades de ``[0, 255]`` para ``[zmin, zmax]``.
     """
-    trf = transformacao_linear(img, (zmin, zmax))
+    trf = transformacao_linear(img, (zmin, zmax), (0, 255))
     return trunca(trf)
 
 

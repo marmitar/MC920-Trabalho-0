@@ -1,6 +1,6 @@
 \subsection{Conversão de Intervalo}
 
-Converte o intervalo de intensidade da imagem de [0, 255] para [100, 200].
+Converte o intervalo de intensidade da imagem de [0, 255] para [100, 200] linearmente.
 
 \begin{listing}[h]
     \caption{Comando \texttt{conv.intervalo}}
@@ -8,7 +8,7 @@ Converte o intervalo de intensidade da imagem de [0, 255] para [100, 200].
     \begin{minted}{python}
         def converter_intervalo(imagem):
             zmin, zmax = np.min(imagem), np.max(imagem)
-            img = 100 * (image / (zmax - zmin)) + 100
+            img = 100 * (image / 255) + 100
             return img.astype(np.uint8)
     \end{minted}
 \end{listing}
