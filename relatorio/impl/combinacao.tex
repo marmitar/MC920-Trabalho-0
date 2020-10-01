@@ -31,3 +31,10 @@ Combinação da imagem atual $A$ com uma segunda imagem $B$ com peso $\alpha$, r
             return img.astype(np.uint8)
     \end{minted}
 \end{listing}
+
+Usando a biblioteca OpenCV, essa função poderia ser implementada com o \pyline{addWeighted} \autocite{ref:addweighted}, como mostrada abaixo.
+
+\begin{minted}{python}
+    def combinacao(A, B, alpha):
+        return cv2.addWeighted(A, alpha, B, 1-alpha, 0)
+\end{minted}
