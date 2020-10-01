@@ -2,7 +2,7 @@
 
 \usepackage{caption, subcaption, pdfpages, float}
 \usepackage{graphics, wrapfig, pgf, graphicx}
-\graphicspath{{../imagens/}}
+\graphicspath{{../}}
 
 
 % pacotes para importar código
@@ -39,14 +39,14 @@
 
     O objetivo deste trabalho é de realizar processamentos básicos de imagem e se familiarizar com Python e suas ferramentas. Pensando nisso, o programa desenvolvido utiliza a biblioteca OpenCV para leitura, codificação e decodificação de imagens \texttt{PNG} e usa Numpy para tratamento vetorizado da imagem.
 
-    Todos os processamentos serão aplicados nas mesmas imagens da especificação do trabalho e uma imagem colorida, apresentada na \cref{fig:baboon}.
+    Todos os processamentos serão aplicados nas mesmas imagens da especificação do trabalho e uma imagem colorida, apresentada na \cref{fig:color}.
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=6cm]{color.png}
+        \includegraphics[width=6cm]{imagens/color.png}
 
         \caption{Imagem colorida usada como comparação dos resultados dos processamentos.}
-        \label{fig:baboon}
+        \label{fig:color}
     \end{figure}
 
     \section{O Programa}
@@ -67,13 +67,24 @@
 
     A tipagem estática é aplicada para facilitar o desenvolvimento e a leitura do código, mas ela limita a execução em Python para as versões 3.7 ou superior \autocite{ref:pep563}.
 
+    Todas as figuras base utilizadas neste relatório podem ser encontradas na pasta \texttt{imagens}. A \cref{fig:color}, por exemplo, é a figura \texttt{color.png}.
+
     \subsection{Execução}
 
-    A execução deve ser feita através do interpretador de Python 3.7+. A única entrada obrigatória é o caminho para a imagem PNG que será processada. As entradas seguintes serão tratadas como comandos de processamento da imagem. Ao final da execução, a imagem resultante será exibida na tela. Por exemplo, o comando abaixo
+    A execução deve ser feita através do interpretador de Python 3.7+. A única entrada obrigatória é o caminho para a imagem PNG que será processada. As entradas seguintes serão tratadas como comandos de processamento da imagem. Ao final da execução, a imagem resultante será exibida na tela. Por exemplo, o comando abaixo exibe na tela a \cref{fig:execucao}.
 
     \begin{minted}{bash}
-        $ python3.8 main.py baboon.png negativo
+        $ python3.8 main.py imagens/color.png monocromatico plano.bit 6 negativo \
+          mosaico padrao.txt
     \end{minted}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=6cm]{resultados/execucao.png}
+
+        \caption{Aplicação de alguns processamentos na \cref{fig:color}}
+        \label{fig:execucao}
+    \end{figure}
 
     \subsection{Comandos}
     \subsection{Entrada}
