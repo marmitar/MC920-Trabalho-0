@@ -6,16 +6,6 @@ Combinação da imagem atual $A$ com uma segunda imagem $B$ com peso $\alpha$, r
     $ python main.py imagens/baboon.png combina imagens/butterfly 0.2
 \end{minted}
 
-\begin{listing}[H]
-    \caption{Comando \texttt{combina IMAGEM ALPHA}}
-
-    \begin{minted}{python}
-        def combinacao(A, B, alpha):
-            img = A * alpha + B * (1 - alpha)
-            return img.astype(np.uint8)
-    \end{minted}
-\end{listing}
-
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -31,3 +21,13 @@ Combinação da imagem atual $A$ com uma segunda imagem $B$ com peso $\alpha$, r
 
     \caption{Imagem combinada com \texttt{imagens/butterfly.png}, com $\alpha = 0.2$.}
 \end{figure}
+
+\begin{listing}[H]
+    \caption{Comando \texttt{combina IMAGEM ALPHA}}
+
+    \begin{minted}{python}
+        def combinacao(A, B, alpha):
+            img = A * alpha + B * (1 - alpha)
+            return img.astype(np.uint8)
+    \end{minted}
+\end{listing}
