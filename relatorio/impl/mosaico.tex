@@ -27,6 +27,19 @@
 
     \begin{minted}{python}
         def mosaico(imagem, ordem):
-            ...
+            N, M = ordem.shape
+            # split e flatten
+            bloco = [
+                bloco
+                for lin in np.vsplit(imagem, N)
+                for bloco in np.hsplit(lin, M)
+            ]
+            # accesso e concatena
+            imagem = np.concatenate([
+                np.concatenate([bloco[i] for i in lin], axis=1)
+                for lin in ordem
+            ])
+            return imagem
+
     \end{minted}
 \end{listing}
