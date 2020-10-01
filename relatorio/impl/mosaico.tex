@@ -1,1 +1,32 @@
 \subsection{Mosaico} \label{sec:mosaico}
+
+\textcolor{red}{ORDENACAO? PADRAO? IMPL?}
+
+\begin{minted}{bash}
+    $ python main.py imagens/baboon.png mosaico padrao.txt
+\end{minted}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=6cm]{resultados/colormsc.png}
+        \caption{\texttt{imagens/color.png}}
+    \end{subfigure}%
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=6cm]{resultados/baboonmsc.png}
+        \caption{\texttt{imagens/babooon.png}}
+    \end{subfigure}
+
+    \caption{Mosaico da imagem com \textcolor{red}{ALGUMA COISA}.}
+\end{figure}
+
+\begin{listing}[H]
+    \caption{Comando \texttt{mosaico ORDENACAO}}
+
+    \begin{minted}{python}
+        def mosaico(imagem, ordem):
+            ...
+    \end{minted}
+\end{listing}
