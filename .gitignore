@@ -6,5 +6,10 @@ __pycache__
 *.fdb*
 *.log*
 *.out*
+*.run*
+*.bbl*
+*.blg*
+*-blx*
 *.synctex*
+_minted*/
 relatorio/*.pdf
