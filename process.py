@@ -50,7 +50,7 @@ if __name__ == "__main__":
     parser = ArgumentParser(description=description, allow_abbrev=False)
     parser.add_argument('input', type=FileType('rb'), metavar='INPUT',
                         help='imagem de entrada')
-    parser.add_argument('-s', '--force-show', action='store_true',
+    parser.add_argument('-f', '--force-show', action='store_true',
                         help='sempre mostra o resultado final em uma janela')
     parser.add_argument('-o', '--output', type=FileType('wb'), metavar='FILE',
                         help='arquivo para gravar o resultado')
