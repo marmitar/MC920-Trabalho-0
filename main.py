@@ -56,7 +56,7 @@ if __name__ == "__main__":
                         help='arquivo para gravar o resultado')
     parser.add_argument('ops', type=str, metavar='OPERATION [ARGS...]', nargs='*',
                         help='operações que devem ser feitas na imagem')
-    args = parser.parse_args()
+    args = parser.parse_intermixed_args()
 
     # entrada
     img, name = leitura(args.input)

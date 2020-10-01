@@ -37,7 +37,7 @@
 
     \section{Introdução}
 
-    O objetivo deste trabalho é de realizar processamentos básicos de imagem e se familiarizar com Python e suas ferramentas. Pensando nisso, o programa desenvolvido utiliza a biblioteca OpenCV para leitura, codificação e decodificação de imagens \texttt{PNG} e usa Numpy para tratamento vetorizado da imagem.
+    O objetivo deste trabalho é de realizar processamentos básicos de imagem e se familiarizar com Python e suas ferramentas. Pensando nisso, o programa desenvolvido utiliza a biblioteca OpenCV para leitura, codificação e decodificação de imagens PNG e usa Numpy para tratamento vetorizado da imagem.
 
     Todos os processamentos serão aplicados nas mesmas imagens da especificação do trabalho e uma imagem colorida, apresentada na \cref{fig:color}.
 
@@ -86,9 +86,14 @@
         \label{fig:execucao}
     \end{figure}
 
+    Além das entradas posicionais, existem dois argumentos opicionais. Com \mintinline{bash}{--output}, ou \mintinline{bash}{-o}, é possível gravar o resultado em um arquivo PNG em vez de exibir na tela.
+
+    \begin{minted}{bash}
+        $ python3.8 main.py imagens/color.png -o out.png monocromatico plano.bit 6 \
+          negativo mosaico padrao.txt
+    \end{minted}
+
     \subsection{Comandos}
-    \subsection{Entrada}
-    \subsection{Saída}
 
     \section{Implementação}
     Cada um? Default pro mosaico?
