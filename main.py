@@ -66,8 +66,9 @@ if __name__ == "__main__":
     img = aplica_ops(img, args.ops)
 
     # saída
-    if len(args.output) == 0 or args.force_show:
-        mostrar(img, name)
+    if args.output:
+        for output in args.output:
+            escrita(img, output)
 
-    for output in args.output:
-        escrita(img, output)
+    if args.output is None or args.force_show:
+        mostrar(img, name)
