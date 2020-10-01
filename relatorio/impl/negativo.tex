@@ -1,0 +1,30 @@
+\subsection{Negativo da Imagem}
+
+Para essa conversão basta fazer ~\pyline{255 - intensidade}~ para cada píxel. Como 255 também é maior valor de um \textit{byte}, basta também inverter todos os bits da imagem.
+
+\begin{listing}[h]
+    \caption{Comando \texttt{negativo}}
+
+    \begin{minted}{python}
+        def negativo(imagem):
+            return ~imagem
+    \end{minted}
+\end{listing}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=6cm]{resultados/colorneg.png}
+        \caption{\texttt{imagens/color.png}}
+    \end{subfigure}%
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=6cm]{resultados/cityneg.png}
+        \caption{\texttt{imagens/city.png}}
+    \end{subfigure}
+
+    \caption{Inversão da intensidade.}
+\end{figure}
+
+Em vez de usar o \textit{not} do Numpy, existe também \pyline{cv2.bitwise_not(imagem)} \autocite{ref:bitwise_not}.
