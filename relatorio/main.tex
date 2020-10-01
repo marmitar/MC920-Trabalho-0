@@ -99,8 +99,33 @@
 
     O programa entende dez comandos distintos, apresentados abaixo, que podem ser repetidos quantas vezes forem necessárias. Os comandos são executados na ordem em que aparecem na linha de comando.
 
+    Todos os comandos abaixos devem ser usados da mesma forma como aparecem aqui, em letras minúsculas, sem acentos e com ponto onde aparecer abaixo. Os nomes em letras maiúsculas são os argumentos daquele comando, que devem aparecem após o nome do comando (a maioria deles não tem argumentos).
+
+    \begin{description}
+        \item[\texttt{monocromatico}] Transforma a imagem para monocromática, em escala de cinza. Só faz diferente para entradas coloridas.
+
+        \item[\texttt{negativo}] Inverte a intensidade de cada pixel da imagem, em todos os canais de cores.
+
+        \item[\texttt{esp.verical}] Faz o espelhamento vertical da imagem.
+
+        \item[\texttt{conv.intervalo}] Converte o intervalo de intensidades para [100, 200].
+
+        \item[\texttt{inverte.pares}] Inverte a direção dos píxeis das linhas pares da imagem.
+
+        \item[\texttt{reflexao}] Faz a reflexão das linhas superiores.
+
+        \item[\texttt{aj.brilho GAMA}] Aplica um ajuste de brilho com fator \texttt{GAMA}.
+
+        \item[\texttt{plano.bit M}] Extrai o plano de bit de ordem \texttt{M} para ordens em [0, 8).
+
+        \item[\texttt{combina IMAGEM ALPHA}] Faz a combinação com outra imagem PNG no arquivo \texttt{IMAGEM} por média ponderada com um fator de peso \texttt{ALPHA}.
+
+        \item[\texttt{mosaico ORDENACAO}] Contrói um mosaico da imagem a partir de nova ordem dos blocos descrita no arquivo \texttt{ORDENACAO} (detalhes na \cref{sec:mosaico}).
+    \end{description}
+
     \section{Implementação}
-    Cada um? Default pro mosaico?
+
+    \subsection{Mosaico} \label{sec:mosaico}
 
     \section{Resultados}
 
