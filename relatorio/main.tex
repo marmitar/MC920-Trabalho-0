@@ -1,7 +1,9 @@
 \documentclass[assignment = 0]{homework}
 
 \usepackage{caption, subcaption, pdfpages, float}
-\usepackage{graphics, wrapfig, pgf}
+\usepackage{graphics, wrapfig, pgf, graphicx}
+\graphicspath{{../}}
+
 
 % pacotes para importar código
 \usepackage{caption, booktabs}
@@ -26,14 +28,26 @@
 
 \SetupFloatingEnvironment{listing}{name=Código}
 
-\usepackage[style=verbose-ibid,backend=bibtex]{biblatex}
+\usepackage[style=verbose-ibid,backend=biber]{biblatex}
 \bibliography{referencias}
+\usepackage{csquotes}
+\usepackage[noabbrev, nameinlink, brazilian]{cleveref}
 
 \begin{document}
 
     \section{Introdução}
 
     O objetivo deste trabalho é de realizar processamentos básicos de imagem e se familiarizar com Python e suas ferramentas. Pensando nisso, o programa desenvolvido utiliza a biblioteca OpenCV para leitura, codificação e decodificação de imagens \texttt{PNG} e usa Numpy para tratamento vetorizado da imagem.
+
+    Todos os processamentos serão aplicados nas mesmas imagens da especificação do trabalho e uma imagem colorida, apresentada na \cref{fig:baboon}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=6cm]{baboon.png}
+
+        \caption{Imagem colorida usada como comparação dos resultados dos processamentos.}
+        \label{fig:baboon}
+    \end{figure}
 
     \section{O Programa}
 

@@ -10,6 +10,7 @@ __pycache__
 *.bbl*
 *.blg*
 *-blx*
+*.bcf*
 *.synctex*
 _minted*/
 relatorio/*.pdf
