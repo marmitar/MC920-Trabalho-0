@@ -43,19 +43,20 @@ def aplica_ops(img: Image, ops: List[str]) -> Image:
     return img
 
 
-if __name__ == "__main__":
-    # parser de argumentos
-    description = 'Ferramenta de processamentos simples de imagem.'
+# parser de argumentos
+description = 'Ferramenta de processamentos simples de imagem.'
 
-    parser = ArgumentParser(description=description, allow_abbrev=False)
-    parser.add_argument('input', type=FileType('rb'), metavar='INPUT',
-                        help='imagem de entrada')
-    parser.add_argument('-f', '--force-show', action='store_true',
-                        help='sempre mostra o resultado final em uma janela')
-    parser.add_argument('-o', '--output', type=FileType('wb'), metavar='FILE',
-                        help='arquivo para gravar o resultado')
-    parser.add_argument('ops', type=str, metavar='OPERATION [ARGS...]', nargs='*',
-                        help='operações que devem ser feitas na imagem')
+parser = ArgumentParser(description=description, allow_abbrev=False)
+parser.add_argument('input', type=FileType('rb'), metavar='INPUT',
+                    help='imagem de entrada')
+parser.add_argument('-f', '--force-show', action='store_true',
+                    help='sempre mostra o resultado final em uma janela')
+parser.add_argument('-o', '--output', type=FileType('wb'), action='append', metavar='FILE',
+                    help='arquivo para gravar o resultado')
+parser.add_argument('ops', type=str, metavar='OPERATION [ARGS...]', nargs='*',
+                    help='operações que devem ser feitas na imagem')
+
+if __name__ == "__main__":
     args = parser.parse_intermixed_args()
 
     # entrada
@@ -65,8 +66,8 @@ if __name__ == "__main__":
     img = aplica_ops(img, args.ops)
 
     # saída
-    if args.output is None or args.force_show:
+    if len(args.output) == 0 or args.force_show:
         mostrar(img, name)
 
-    if args.output is not None:
-        escrita(img, args.output)
+    for output in args.output:
+        escrita(img, output)
