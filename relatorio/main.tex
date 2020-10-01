@@ -2,7 +2,7 @@
 
 \usepackage{caption, subcaption, pdfpages, float}
 \usepackage{graphics, wrapfig, pgf, graphicx}
-\graphicspath{{../}}
+\graphicspath{{../imagens/}}
 
 
 % pacotes para importar código
@@ -43,7 +43,7 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=6cm]{baboon.png}
+        \includegraphics[width=6cm]{color.png}
 
         \caption{Imagem colorida usada como comparação dos resultados dos processamentos.}
         \label{fig:baboon}
@@ -69,7 +69,7 @@
 
     \subsection{Execução}
 
-    A execução deve ser feita através do interpretador de Python 3.7+. A única entrada obrigatória é o caminho para a imagem PNG que será processada. As entradas seguintes serão tratadas como comandos de processamento da imagem. Ao final da execução, a imagem resultante será exibida na tela.
+    A execução deve ser feita através do interpretador de Python 3.7+. A única entrada obrigatória é o caminho para a imagem PNG que será processada. As entradas seguintes serão tratadas como comandos de processamento da imagem. Ao final da execução, a imagem resultante será exibida na tela. Por exemplo, o comando abaixo
 
     \begin{minted}{bash}
         $ python3.8 main.py baboon.png negativo
