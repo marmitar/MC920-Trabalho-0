@@ -31,7 +31,7 @@ def transformacao_linear(x: np.ndarray, ylim: Limit, xlim: Optional[Limit]=None)
     xlim = x if xlim is None else xlim
     ymin, ymax = np.min(ylim), np.max(ylim)
     xmin, xmax = np.min(xlim), np.max(xlim)
-    y = ((ymax - ymin) * x) / (xmax - xmin) + ymin
+    y = (ymax - ymin) * (x / (xmax - xmin)) + ymin
     return y
 
 
