@@ -34,7 +34,7 @@
 \RequirePackage[
     a4paper,
     headheight = 20pt,
-    margin = 1in,
+    margin = 1in, bottom=0.8in,
     tmargin = \dimexpr 1in - 10pt \relax
   ]{geometry} % set up nicer margins
   \addtolength{\footskip}{20pt}

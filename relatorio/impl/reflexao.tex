@@ -1,6 +1,17 @@
 \subsection{Reflexão das Linhas Superiores}
 
-\begin{figure}[!htb]
+\begin{listing}[H]
+    \caption{Comando \texttt{reflexao}}
+
+    \begin{minted}{python}
+        def reflexao_linhas(imagem):
+            mid = len(image) // 2
+            imagem[-mid:] = imagem[:mid][::-1]
+            return imagem
+    \end{minted}
+\end{listing}
+
+\begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
@@ -15,14 +26,3 @@
 
     \caption{Linhas superiores refletidas.}
 \end{figure}
-
-\begin{listing}[htb]
-    \caption{Comando \texttt{reflexao}}
-
-    \begin{minted}{python}
-        def reflexao_linhas(imagem):
-            mid = len(image) // 2
-            imagem[-mid:] = imagem[:mid][::-1]
-            return imagem
-    \end{minted}
-\end{listing}
