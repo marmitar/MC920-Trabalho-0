@@ -2,17 +2,7 @@
 
 A transformação para escala de cinza é feita através da média dos três canais de cores, truncada para inteiro. A matriz resultante é então repetida novamente para os três canais, para que a operação possa ser repetida sem erros de execução do programa.
 
-\begin{listing}[h]
-    \caption{Comando \texttt{monocromatico}}
-
-    \begin{minted}{python}
-        def grayscale(imagem):
-            gray = np.mean(imagem, axis=2).astype(np.uint8)
-            return np.stack([gray, gray, gray], axis=2)
-    \end{minted}
-\end{listing}
-
-\begin{figure}
+\begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
@@ -27,5 +17,15 @@ A transformação para escala de cinza é feita através da média dos três can
 
     \caption{Imagem em escala de cinza.}
 \end{figure}
+
+\begin{listing}[htb]
+    \caption{Comando \texttt{monocromatico}}
+
+    \begin{minted}{python}
+        def grayscale(imagem):
+            gray = np.mean(imagem, axis=2).astype(np.uint8)
+            return np.stack([gray, gray, gray], axis=2)
+    \end{minted}
+\end{listing}
 
 Em vez de \pyline{np.mean(imagem, ...)}, a conversão poderia ser implementado também com \pyline{cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)} \autocite{ref:cvtcolor}.
