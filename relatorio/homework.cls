@@ -35,7 +35,9 @@
     a4paper,
     headheight = 20pt,
     margin = 1in,
-    tmargin = \dimexpr 1in - 10pt \relax
+    top = \dimexpr 1in - 10pt \relax,
+    bottom = \dimexpr 1in - 20pt \relax,
+    footskip = 0pt,
   ]{geometry} % set up nicer margins
   \addtolength{\footskip}{20pt}
 \RequirePackage{fancyhdr} % for headers and footers
@@ -49,6 +51,7 @@
 \RequirePackage{xcolor} % for colored text (comments in algorithms)
 \RequirePackage{trimspaces, xstring} % for multiple author parsing
 \RequirePackage[hidelinks]{hyperref}
+\RequirePackage[bottom]{footmisc}
 
 \hypersetup{
   pdftitle  = {MC920 - Trabalho \homework@assignment},
@@ -68,6 +71,17 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 \pagestyle{fancy}
+
+\fancypagestyle{footnotes}{%
+  \setlength{\footskip}{20pt}
+}
+\setlength{\skip\footins}{24pt plus 3pt minus 3pt}
+\fancypagestyle{main}{%
+  \setlength{\footskip}{44pt plus 3pt minus 3pt}
+}
+\renewcommand{\footnotelayout}{%
+  \thispagestyle{footnotes}
+}
 
 % ensure that the title is inserted in the document
 \title{\vspace{-2\baselineskip}Trabalho \homework@assignment}

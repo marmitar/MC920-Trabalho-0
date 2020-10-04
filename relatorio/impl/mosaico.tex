@@ -35,7 +35,7 @@
                 for lin in np.vsplit(imagem, N)
                 for bloco in np.hsplit(lin, M)
             ]
-            # accesso e concatena
+            # accesso (em lista) e concatena
             imagem = np.concatenate([
                 np.concatenate([bloco[i] for i in lin], axis=1)
                 for lin in ordem
