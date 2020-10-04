@@ -1,6 +1,6 @@
 \subsection{Mosaico} \label{sec:mosaico}
 
-\textcolor{red}{ORDENACAO? PADRAO? IMPL?}
+Transformação em mosaico da imagem por uma reordenação dos seus blocos. O argumento \texttt{ORDENACAO} deve conter uma caminho para o arquivo com essa nova ordenação e deve aparecer na sequência após o comando \texttt{mosaico}, como no invocação a seguir.
 
 \begin{minted}{text}
     $ python main.py imagens/baboon.png mosaico padrao.txt
@@ -20,7 +20,7 @@
         \label{fig:res:10}
     \end{subfigure}
 
-    \caption{Mosaico da imagem com \textcolor{red}{ALGUMA COISA}.}
+    \caption{Mosaico da imagem pelo \texttt{padrao.txt}.}
 \end{figure}
 
 \begin{listing}[H]
@@ -35,11 +35,27 @@
             ]
             # accesso (em lista) e concatena
             imagem = np.concatenate([
-                np.concatenate([bloco[i] for i in lin], axis=1)
+                np.concatenate([bloco[i-1] for i in lin], axis=1)
                 for lin in ordem
             ])
             return imagem
     \end{minted}
 
     \caption{Comando \texttt{mosaico ORDENACAO}}
+    \label{code:mosaico}
 \end{listing}
+
+O arquivo de reordenação deve ser composto de inteiros únicos entre $1$ e $N \times M$, dispostos em $N$ linhas e $M$ colunas, e separados apenas por espaços (para a leitura com \pyline{np.loadtxt} \autocite{ref:loadtxt}). As dimensões de tamanho da imagem também devem ser divisíveis por $N$ e $M$ (altura por $N$ e largura pro $M$) para que os blocos possam ser reposicionados. No código fonte existe um arquivo \texttt{padrao.txt} com a reordenação do enunciado para imagens com dimensões múltiplas de 4.
+
+\begin{listing}[H]
+    \begin{minted}{text}
+        6 11 13  3
+        8 16  1  9
+       12 14  2  7
+        4 15 10  5
+    \end{minted}
+
+    \caption{Arquivo \texttt{padrao.txt} com a reordenação proposta no enunciado.}
+\end{listing}
+
+Como a ordem do mosaico da imagem depende da entrada, o código não foi vetorizado, como pode ser visto no \hyperref[code:mosaico]{trecho \ref*{code:mosaico}}.
