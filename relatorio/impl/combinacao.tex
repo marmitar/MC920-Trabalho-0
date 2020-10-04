@@ -37,4 +37,6 @@ Usando a biblioteca OpenCV, essa função poderia ser implementada com o \pyline
 \begin{minted}{python}
     def combinacao(A, B, alpha):
         return cv2.addWeighted(A, alpha, B, 1-alpha, 0)
+        # ou com a CUDA
+        return cv2.cuda.addWeighted(A, alpha, B, 1-alpha, 0)
 \end{minted}
