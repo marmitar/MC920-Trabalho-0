@@ -2,8 +2,6 @@
 
 O objetivo deste trabalho é de realizar processamentos básicos de imagem e se familiarizar com Python e suas ferramentas. Pensando nisso, o programa desenvolvido utiliza a biblioteca OpenCV para leitura, codificação e decodificação de imagens PNG e usa Numpy para tratamento vetorizado da imagem.
 
-Todos os processamentos serão aplicados nas mesmas imagens da especificação do trabalho e adicionalmente em uma imagem colorida, apresentada na \cref{fig:color}.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=6cm]{imagens/color.png}
@@ -12,23 +10,27 @@ Todos os processamentos serão aplicados nas mesmas imagens da especificação d
     \label{fig:color}
 \end{figure}
 
+Todos os processamentos serão aplicados nas mesmas imagens da especificação do trabalho e adicionalmente em uma imagem colorida, apresentada na \cref{fig:color}.
+
 \section{O Programa}
 
 \subsection{Código Fonte}
 
-O programa foi desenvolvido em 4 arquivos separados:
+O programa foi desenvolvido em 4 arquivos de Python separados:
 
 \begin{description}
     \item[main.py] É o corpo do programa, resposável por processar os comandos e opções da linha de comando.
 
-    \item[inout.py] Funções que tratam da entrada e saída do programa, como leitura e escritas de arquivos de imagem e também da apresentação da imagem em uma janela gráfica.
+    \item[inout.py] Funções que tratam da entrada e saída do programa, como leitura e escrita de arquivos de imagem e também da apresentação da imagem em uma janela gráfica.
 
-    \item[lib.py] Funções de tranformação da imagem, como ajute de brilho e acesso do plano de bits.
+    \item[lib.py] Funções de tranformação da imagem, como ajuste de brilho e acesso do plano de bits.
 
     \item[tipos.py] Definição dos tipos para tipagem estática (apenas o protocolo \autocite{ref:pep544} \pyline{Image}).
 \end{description}
 
-A tipagem estática é aplicada para facilitar o desenvolvimento e a leitura do código, mas ela limita a execução em Python para as versões 3.7 ou superior \autocite{ref:pep563}. Todas as figuras base utilizadas neste relatório podem ser encontradas na pasta \texttt{imagens} do código fonte (a \cref{fig:color}, por exemplo, está em \texttt{imagens/color.png}). Os resultados de processamento apresentados na \cref{sec:impl} serão rotulados com o caminho da figura original nessa pasta para facilitar a comparação.
+A tipagem estática é aplicada para facilitar o desenvolvimento e a leitura do código, mas ela limita a execução em Python para as versões 3.7 ou superior \autocite{ref:pep563}.
+
+Todas as figuras base utilizadas neste relatório podem ser encontradas na pasta \texttt{imagens} do código fonte (a \cref{fig:color}, por exemplo, está em \texttt{imagens/color.png}). Os resultados de processamento apresentados na \cref{sec:impl} serão rotulados com o caminho da figura original nessa pasta para facilitar a comparação. Também faz parte do código fonte um arquivo textual \texttt{padrao.txt} como parte da operação de mosaico, como explicado na \cref{sec:mosaico}.
 
 \subsection{Execução}
 
