@@ -50,13 +50,7 @@
 \RequirePackage{booktabs} % for professional tables
 \RequirePackage{xcolor} % for colored text (comments in algorithms)
 \RequirePackage{trimspaces, xstring} % for multiple author parsing
-\RequirePackage[hidelinks]{hyperref}
 \RequirePackage[bottom]{footmisc}
-
-\hypersetup{
-  pdftitle  = {MC920 - Trabalho \homework@assignment},
-  pdfauthor = {Tiago de Paula}
-}
 
 % look for figures in the figures directory
 % \graphicspath{{figures/}}
