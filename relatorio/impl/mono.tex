@@ -2,7 +2,7 @@
 
 A transformação para escala de cinza é feita através da média dos três canais de cores, truncada para inteiro. A matriz resultante é então repetida novamente para os três canais, para que a operação possa ser repetida sem erros de execução do programa.
 
-\begin{listing}[htb]
+\begin{listing}[H]
     \begin{minted}{python}
         def grayscale(imagem):
             gray = np.mean(imagem, axis=2).astype(np.uint8)

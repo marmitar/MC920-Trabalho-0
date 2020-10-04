@@ -1,16 +1,5 @@
 \subsection{Espelhamento Vertical}
 
-\begin{listing}[H]
-    \begin{minted}{python}
-        def espelhamento_vertical(imagem):
-            return imagem[::-1]
-    \end{minted}
-
-    \caption{Comando \texttt{esp.vertical}}
-\end{listing}
-
-Pode ser implementado também com \pyline{cv2.flip(imagem, 0)} \autocite{ref:flip}.
-
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -26,3 +15,14 @@ Pode ser implementado também com \pyline{cv2.flip(imagem, 0)} \autocite{ref:fli
 
     \caption{Imagem espelhada verticalmente.}
 \end{figure}
+
+\begin{listing}[H]
+    \begin{minted}{python}
+        def espelhamento_vertical(imagem):
+            return imagem[::-1]
+    \end{minted}
+
+    \caption{Comando \texttt{esp.vertical}}
+\end{listing}
+
+Pode ser implementado também com \pyline{cv2.flip(imagem, 0)} \autocite{ref:flip}.

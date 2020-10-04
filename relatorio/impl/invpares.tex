@@ -2,17 +2,6 @@
 
 Inverte todas as linhas pares horizontalmente.
 
-\begin{listing}[H]
-
-    \begin{minted}{python}
-        def inverte_linhas_pares(imagem):
-            magem[::2] = image[::2,::-1]
-            return imagem
-    \end{minted}
-
-    \caption{Comando \texttt{inverte.pares}}
-\end{listing}
-
 \begin{figure}[h]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -28,3 +17,14 @@ Inverte todas as linhas pares horizontalmente.
 
     \caption{Linhas pares invertidas.}
 \end{figure}
+
+\begin{listing}[H]
+
+    \begin{minted}{python}
+        def inverte_linhas_pares(imagem):
+            magem[::2] = image[::2,::-1]
+            return imagem
+    \end{minted}
+
+    \caption{Comando \texttt{inverte.pares}}
+\end{listing}
