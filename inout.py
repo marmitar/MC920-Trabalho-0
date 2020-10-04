@@ -23,16 +23,11 @@ def leitura(filebuf: IO[AnyStr]) -> Tuple[Image, str]:
     return img, nome
 
 
-def escrita(img: Image, filebuf: IO[AnyStr]) -> None:
+def escrita(img: Image, arquivo: str) -> None:
     """
-    Escreve uma matriz como imagem PNG em um buffer IO
+    Escreve uma matriz como imagem PNG em um arquivo
     """
-    ret, buf = cv2.imencode('.png', img)
-    if not ret:
-        msg = 'não foi possível codificar vetor como PNG'
-        raise Exception(msg)
-
-    np.asarray(buf).tofile(filebuf)
+    cv2.imwrite(arquivo, img)
 
 
 def mostrar(img: Image, nome: str="") -> None:

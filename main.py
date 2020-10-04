@@ -51,7 +51,7 @@ parser.add_argument('input', type=FileType('rb'), metavar='INPUT',
                     help='imagem de entrada')
 parser.add_argument('-f', '--force-show', action='store_true',
                     help='sempre mostra o resultado final em uma janela')
-parser.add_argument('-o', '--output', type=FileType('wb'), action='append', metavar='FILE',
+parser.add_argument('-o', '--output', type=str, action='append', metavar='FILE',
                     help='arquivo para gravar o resultado')
 parser.add_argument('ops', type=str, metavar='OPERATION [ARGS...]', nargs='*',
                     help='operações que devem ser feitas na imagem')
