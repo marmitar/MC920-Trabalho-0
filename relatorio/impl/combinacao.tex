@@ -23,13 +23,13 @@ Combinação da imagem atual $A$ com uma segunda imagem $B$ com peso $\alpha$, r
 \end{figure}
 
 \begin{listing}[H]
-    \caption{Comando \texttt{combina IMAGEM ALPHA}}
-
     \begin{minted}{python}
         def combinacao(A, B, alpha):
             img = A * alpha + B * (1 - alpha)
             return img.astype(np.uint8)
     \end{minted}
+
+    \caption{Comando \texttt{combina IMAGEM ALPHA}}
 \end{listing}
 
 Usando a biblioteca OpenCV, essa função poderia ser implementada com o \pyline{addWeighted} \autocite{ref:addweighted}, como mostrada abaixo.

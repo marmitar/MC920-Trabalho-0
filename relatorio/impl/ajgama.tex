@@ -27,12 +27,12 @@ O fator $\gamma$ é passado como argumento para o comando \text{aj.brilho}. Por 
 \end{figure}
 
 \begin{listing}[H]
-    \caption{Comando \texttt{aj.brilho GAMA}}
-
     \begin{minted}{python}
         def ajuste_brilho(imagem, gama):
             A = imagem / 255
             B = A ** (1 / gama)
             return (B * 255).astype(np.uint8)
     \end{minted}
+
+    \caption{Comando \texttt{aj.brilho GAMA}}
 \end{listing}

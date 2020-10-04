@@ -1,14 +1,14 @@
 \subsection{Reflexão das Linhas Superiores}
 
 \begin{listing}[H]
-    \caption{Comando \texttt{reflexao}}
-
     \begin{minted}{python}
         def reflexao_linhas(imagem):
             mid = len(image) // 2
             imagem[-mid:] = imagem[:mid][::-1]
             return imagem
     \end{minted}
+
+    \caption{Comando \texttt{reflexao}}
 \end{listing}
 
 \begin{figure}[H]

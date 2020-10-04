@@ -7,13 +7,13 @@ Extração de um plano de bit $M$ da imagem. O argumento $M$ deve aparecer logo 
 \end{minted}
 
 \begin{listing}[H]
-    \caption{Comando \texttt{plano.bit M}}
-
     \begin{minted}{python}
         def plano_de_bit(imagem, bit):
             plano = (imagem >> bit) & 1
             return plano * 255
     \end{minted}
+
+    \caption{Comando \texttt{plano.bit M}}
 \end{listing}
 
 \begin{figure}[H]
