@@ -27,7 +27,7 @@
 % load parent class with some default options
 \LoadClass[a4paper, 11pt]{article}
 
-\RequirePackage[portuguese]{babel}
+\RequirePackage[brazilian]{babel}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 % --- PACKAGES AND SETUP -------------------------------------------------------
